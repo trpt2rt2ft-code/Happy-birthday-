@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>The Enchanted Birthday Mystery</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>The Enchanted Birthday Mystery</h1>
+      <p class="subtitle">A whimsical, mysterious, and playful birthday quest</p>
+    </header>
+
+    <main>
+      <!-- Title / Menu -->
+      <section id="title-screen" class="screen">
+        <div class="card">
+          <h2>Begin Your Quest</h2>
+          <p>Enter a world of riddles, potions, glowing cakes, wandering mazes, and a celebratory board-game finale.</p>
+          <input id="playerName" placeholder="Write your friend's name..." />
+          <div class="btn-row">
+            <button id="startBtn" class="btn primary">Start Adventure</button>
+            <button id="instructionsBtn" class="btn">How it works</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Instructions -->
+      <section id="instructions-screen" class="screen hidden">
+        <div class="card">
+          <h2>How it works</h2>
+          <ul>
+            <li>Follow the story and make choices.</li>
+            <li>Each mini-game awards a <strong>Cake Piece</strong>.</li>
+            <li>Collect enough Cake Pieces to unlock the Birthday Board finale.</li>
+          </ul>
+          <div class="btn-row">
+            <button class="btn" id="backToTitle">Back</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Story -->
+      <section id="story-screen" class="screen hidden">
+        <div class="card story">
+          <div id="storyText"></div>
+          <div id="choices"></div>
+        </div>
+      </section>
+
+      <!-- Mini-games container -->
+      <section id="games-screen" class="screen hidden">
+        <div class="card">
+          <div class="top-row">
+            <div id="cakePieces">Cake Pieces: <span id="cakeCount">0</span>/5</div>
+            <div id="playerLabel">Player: <span id="playerLabelName">Friend</span></div>
+          </div>
+
+          <div id="gamesMenu" class="games-grid">
+            <button class="gameBtn" data-game="riddle">Riddle Gate</button>
+            <button class="gameBtn" data-game="potion">Potion Mixer</button>
+            <button class="gameBtn" data-game="crystal">Crystal Cake (Memory)</button>
+            <button class="gameBtn" data-game="maze">Maze of Wishes</button>
+            <button class="gameBtn" data-game="board">Birthday Board (Finale)</button>
+          </div>
+
+          <div id="gameArea"></div>
+          <div class="btn-row">
+            <button class="btn" id="toStory">Return to Story</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <small>Made with ✨ — customize the story in <code>story/intro.json</code> and expand mini-games in <code>/mini-games</code>.</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
