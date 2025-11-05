@@ -1,0 +1,91 @@
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --accent: #a58cff;
+  --muted: #9aa4b2;
+  --glass: rgba(255,255,255,0.03);
+  --round: 12px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+* { box-sizing: border-box; }
+html,body,#app { height:100%; margin:0; }
+body {
+  background: linear-gradient(180deg,#081127 0%, #0f1724 100%);
+  color: #e6eef8;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding:32px;
+}
+
+header { text-align:center; margin-bottom:18px; }
+h1 { margin:0; font-size:28px; letter-spacing:0.6px; }
+.subtitle { color:var(--muted); margin-top:6px; }
+
+main { width:100%; max-width:980px; }
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:var(--round);
+  padding:18px;
+  box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.screen { margin-bottom:18px; }
+.hidden { display:none; }
+
+.btn { padding:8px 12px; border-radius:8px; background:var(--glass); border:1px solid rgba(255,255,255,0.03); color:inherit; cursor:pointer; }
+.btn.primary { background: linear-gradient(90deg, #9b7bff, #6ed3ff); color:#081127; font-weight:600; border:none; }
+.btn-row { display:flex; gap:8px; margin-top:12px; }
+
+input#playerName { width:100%; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:inherit; margin:10px 0; }
+
+.games-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px; margin:12px 0; }
+.gameBtn { padding:12px; border-radius:10px; background:linear-gradient(180deg, rgba(165,140,255,0.08), rgba(110,211,255,0.06)); border:1px solid rgba(255,255,255,0.04); cursor:pointer; }
+
+.top-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; color:var(--muted); }
+
+.story { min-height:140px; }
+#choices { margin-top:12px; display:flex; gap:8px; flex-wrap:wrap; }
+
+.choiceBtn { background:rgba(255,255,255,0.03); padding:8px 10px; border-radius:8px; cursor:pointer; border:1px solid rgba(255,255,255,0.02); }
+
+.gameArea { margin-top:12px; min-height:260px; padding:12px; border-radius:10px; background: linear-gradient(180deg, rgba(255,255,255,0.015), transparent); border:1px dashed rgba(255,255,255,0.02); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:10px; }
+
+/* Game specific */
+.riddle { text-align:left; max-width:640px; }
+.option { display:block; margin:8px 0; padding:8px 10px; border-radius:8px; cursor:pointer; border:1px solid rgba(255,255,255,0.03); }
+.grid-ingredients { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
+.ingredient { padding:8px 10px; border-radius:8px; background:rgba(255,255,255,0.02); cursor:grab; }
+.cauldron { width:220px; height:120px; border-radius:12px; background:linear-gradient(180deg,#0b1a12,#07220f); display:flex; align-items:center; justify-content:center; color:var(--muted); border:2px dashed rgba(255,255,255,0.02); }
+
+/* Simon buttons */
+.simon { display:flex; gap:10px; }
+.simon button { width:68px; height:68px; border-radius:8px; border:none; cursor:pointer; opacity:0.9; }
+.simon .red { background:#ff7b7b; }
+.simon .green { background:#7bff9f; }
+.simon .blue { background:#7bb8ff; }
+.simon .yellow { background:#ffe27b; }
+
+/* Maze */
+.maze { display:grid; grid-template-columns: repeat(9, 36px); gap:4px; background:transparent; padding:8px; border-radius:8px; }
+.maze .cell { width:36px; height:36px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.02); border-radius:6px; }
+.maze .player { background:#9b7bff; color:#081127; font-weight:700; border-radius:6px; }
+
+/* Board */
+.board { display:grid; grid-template-columns: repeat(8, 44px); gap:6px; padding:8px; }
+.space { width:44px; height:44px; background:rgba(255,255,255,0.02); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:12px; }
+.token { width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#081127; font-weight:700; }
+.token.p { background: #ffd27b; }
+.token.a { background: #9b7bff; }
+.token.b { background: #7bb8ff; }
+.token.c { background: #7bff9f; }
+
+.small { font-size:12px; color:var(--muted); margin-top:6px; }
+
+@media (max-width:640px){
+  .simon button { width:56px; height:56px; }
+  .board { grid-template-columns: repeat(8, 36px); gap:4px; }
+  .space { width:36px; height:36px; }
+}
